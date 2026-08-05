@@ -145,6 +145,19 @@ Inputs, checkboxes, and radios. 0px radius throughout. Field labels sit above th
 
 **Radio.** Circle. Unchecked is a light Greige border. Checked is an Oxblood dot. Error is a Scarlet border. Disabled is a Greige fill.
 
+## Tags & badges
+
+Severity tags for findings. Chivo Mono, uppercase, small, 0px radius. Two styles: filled and outline.
+
+| Level | Color |
+|---|---|
+| Critical | Scarlet |
+| High | Oxblood |
+| Medium | Sage (Pale Olive) |
+| Low | Greige |
+
+Filled uses the color as the fill: white label on Scarlet and Oxblood, Oxblood label on Sage and Greige. Outline uses the color as a 1px border with a matching label.
+
 ---
 
 # Recipes
