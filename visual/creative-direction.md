@@ -127,6 +127,24 @@ Three button types. Filled and outline buttons are 44px tall with 0px radius. La
 
 All three fills are sanctioned. Pick one primary action per surface and choose the fill by context; do not fall back to the Oxblood fill on reflex.
 
+## Form elements
+
+Inputs, checkboxes, and radios. 0px radius throughout. Field labels sit above the control in Chivo Mono, uppercase, tracked (for example `EMAIL ADDRESS`). Value text is Clash Grotesk.
+
+**Text input.** 1px border, 0px radius.
+
+| State | Treatment |
+|---|---|
+| Default | Light Greige border, grey placeholder. |
+| Focus | Oxblood border, visible cursor. |
+| Filled | Oxblood value text. |
+| Error | Scarlet border with a helper line below in Scarlet (for example "This field is required"). |
+| Disabled | Greyed border and fill. |
+
+**Checkbox.** Square, 0px radius. Unchecked is a light Greige border. Checked is an Oxblood fill with a white check. Error is a Scarlet border. Disabled is a Greige fill.
+
+**Radio.** Circle. Unchecked is a light Greige border. Checked is an Oxblood dot. Error is a Scarlet border. Disabled is a Greige fill.
+
 ---
 
 # Recipes
