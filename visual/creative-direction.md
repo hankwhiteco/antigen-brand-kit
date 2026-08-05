@@ -88,6 +88,27 @@ What wrong looks like for this brand in particular. The mistakes this brand's ow
 
 <!-- A rule enters when the same mistake shows up twice. Once is a bad prompt. Twice is a missing rule. Name the failure concretely enough to catch on sight. -->
 
+**Filled box in the nav.** The Get a demo CTA in the header is text: Chivo Mono, uppercase, tracked, no fill and no border. If it renders as a solid Oxblood or Scarlet box, that is wrong. Filled buttons are for in-page actions, not the header. Nav links are Clash Grotesk 16px, not mono.
+
+---
+
+# Components
+
+Component specs transcribed from the design system (`visual/assets/imagery/antigen design system.pdf`). That file is authoritative: where a recipe or spec here disagrees with it, the design system wins. All controls are 0px radius.
+
+## Navigation
+
+Header layout: logo left, nav links and the Get a demo CTA on the right.
+
+| Element | Spec |
+|---|---|
+| Nav links | Clash Grotesk Variable, 16px, Oxblood. |
+| Link hover | 1px underline, Oxblood. |
+| Link active | Scarlet. |
+| CTA | `Get a demo`. Chivo Mono, uppercase, tracked. Plain text, no fill and no border. |
+
+Nav links are Grotesk, not mono. Only the CTA is mono, and it stays text, never a filled button.
+
 ---
 
 # Recipes
@@ -95,7 +116,7 @@ What wrong looks like for this brand in particular. The mistakes this brand's ow
 Per-surface builds. Each names the lead move and the density for that piece. These match the test prompts in tests/prompts.md. Document what you test, test what you document.
 
 ## Full landing page
-**Lead move:** classical statuary hero + Scarlet mono eyebrow. **Density:** hero breathes (statue, headline in Clash Display, one-line lead, `Get a demo`); nav is Chivo Mono top-right (Solutions · Industries · Research · Company). Down-scroll: alternate White/Rice grounds with a Bark section; big-number motif marks one section; footer on Bark with reversed logo. One hero move per section.
+**Lead move:** classical statuary hero + Scarlet mono eyebrow. **Density:** hero breathes (statue, headline in Clash Display, one-line lead, `Get a demo`); nav is Clash Grotesk top-right (Solutions · Industries · Research · Company), with `Get a demo` as a mono text CTA, not a filled button (see Components > Navigation). Down-scroll: alternate White/Rice grounds with a Bark section; big-number motif marks one section; footer on Bark with reversed logo. One hero move per section.
 
 ## 4-page deck
 **Lead move:** the number motif as running marker (`02.16`…). **Density:** cover = statue + Display headline + logo, sparse; three content pages hold one idea each — a Bark divider page, a stat page using Big Numbers in Scarlet, a body page in Clash Grotesk. Consistent 1px zoning cover-to-content.
