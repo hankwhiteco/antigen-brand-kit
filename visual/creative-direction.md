@@ -109,6 +109,24 @@ Header layout: logo left, nav links and the Get a demo CTA on the right.
 
 Nav links are Grotesk, not mono. Only the CTA is mono, and it stays text, never a filled button.
 
+## Buttons
+
+Three button types. Filled and outline buttons are 44px tall with 0px radius. Labels are Chivo Mono, uppercase, tracked (the CTA type style).
+
+**Text CTA.** Label only, no fill and no border. States: default, hover (1px underline), disabled (greyed). This is the header CTA and inline text actions.
+
+**Filled.** 44px tall, 0px radius. Three fills, each with a darker hover:
+
+| Fill | Label |
+|---|---|
+| Oxblood | White |
+| Scarlet | White |
+| Pale Olive (Sage) | Oxblood |
+
+**Outline.** 44px tall, 0px radius, 1px border. Default is an Oxblood border with an Oxblood label. Hover fills Oxblood with a white label. A ghost variant uses a light Greige border for low emphasis.
+
+All three fills are sanctioned. Pick one primary action per surface and choose the fill by context; do not fall back to the Oxblood fill on reflex.
+
 ---
 
 # Recipes
