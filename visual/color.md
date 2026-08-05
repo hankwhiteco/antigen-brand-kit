@@ -32,3 +32,9 @@ Four solid colors plus two texture treatments. The palette is warm and earthy 鈥
 - **Accent:** Scarlet for the eyebrow, big numbers, active/hover states, and a single graphic mark per surface. Never a large Scarlet background wash.
 - **Sage:** secondary blocks and edge panels; Pale Olive as a button fill.
 - **Ratio guide:** ~60% White/Rice ground 路 ~30% Bark + Greige/Sage 路 ~10% Scarlet spark.
+
+## Spacing scale
+
+Layout spacing steps from the design system. Use these for padding, gaps, and margins; do not invent in-between sizes.
+
+`4 路 8 路 16 路 24 路 32 路 48 路 64 路 96` (px)
