@@ -4,14 +4,14 @@ Three families. Clash Display is the headline voice, Clash Grotesk carries body 
 
 | Role | Typeface | Source | Use for |
 |---|---|---|---|
-| Display / Headlines | **Clash Display** | Fontshare (licensed, incl. in kit) | Display and H1–H3. Set **sentence case**, tight. |
+| Display / Headlines | **Clash Display** | Fontshare (licensed, incl. in kit) | Display and H1–H3. **Regular (400)**, **sentence case**, tight. |
 | Body / UI | **Clash Grotesk Variable** | Fontshare (licensed, incl. in kit) | Lead, body copy, subheads, navigation, form text. |
 | Numbers / Labels | **Chivo Mono** | Google Fonts (OFL) | Big/medium numbers, eyebrows, CTAs, tags, technical labels — usually uppercase, tracked. |
 
 Font files live in [`assets/fonts/`](assets/fonts/): `ClashDisplay_Complete/`, `ClashGrotesk_Complete/`, and `ChivoMono[wght].ttf` (+ italic). Web builds should prefer the `.woff2` files.
 
 ```css
---font-display: "Clash Display", system-ui, sans-serif;      /* sentence case, tight */
+--font-display: "Clash Display", system-ui, sans-serif;      /* Regular 400, sentence case, tight */
 --font-body:    "Clash Grotesk Variable", system-ui, sans-serif;
 --font-mono:    "Chivo Mono", ui-monospace, monospace;        /* uppercase labels, tracked */
 ```
@@ -34,7 +34,7 @@ Font files live in [`assets/fonts/`](assets/fonts/): `ClashDisplay_Complete/`, `
 | CTA | Chivo Mono Regular | 13 / 20 / 0.1em · UPPERCASE |
 
 **Type treatment**
-- Headlines: Clash Display, **sentence case** (not all-caps), tight tracking, hard scale jumps between Display/H1 and body — don't drift to safe mid-scale sizes.
+- Headlines: Clash Display **Regular (400)**, **sentence case** (not all-caps), tight tracking, hard scale jumps between Display/H1 and body — don't drift to safe mid-scale sizes.
 - Eyebrows & CTAs: Chivo Mono, UPPERCASE, tracked (0.1–0.14em), small; Scarlet for eyebrows.
 - Numbers: Chivo Mono, oversized as a device (`02.16` / `0216`).
 - Body: Clash Grotesk Variable, generous line-height (~1.5), left-aligned — never centered.
