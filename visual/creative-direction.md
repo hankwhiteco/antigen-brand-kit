@@ -161,6 +161,20 @@ Severity tags for findings. Chivo Mono, uppercase, small, 0px radius. Two styles
 
 Filled uses the color as the fill: white label on Scarlet and Oxblood, Oxblood label on Sage and Greige. Outline uses the color as a 1px border with a matching label.
 
+## Interaction states
+
+Every interactive element ships its states. They are not optional polish, and a build that only has a default state is not finished. Pull the states from the component specs above.
+
+| Element | States |
+|---|---|
+| Nav links | Hover is a 1px underline. The active link is Scarlet. |
+| Filled buttons | Darken on hover. |
+| Outline button | Fills Oxblood with a white label on hover. |
+| Text CTA | Underlines on hover. Disabled is greyed. |
+| Inputs | Focus is an Oxblood border. Error is a Scarlet border with a message. |
+
+If nothing changes on hover or focus, it is not done.
+
 ---
 
 # Recipes
