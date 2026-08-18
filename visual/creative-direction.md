@@ -28,6 +28,7 @@ How elements are arranged and how much goes on a given area: layout, proportion,
 
 <!-- The section that stops output from going generic. Everything can be right, correct color, type, moves, and the thing still looks templated because the spacing is default and every zone is equally full. Rules go here as testing surfaces them: copy limits per zone, one idea per zone, hard type-scale jumps, what breathes vs. what fills. -->
 
+- **Full-height asymmetric zones.** The layout is full-bleed vertical zones of uneven width, not a centered container with even columns. Run a Rice or White field as the main ground, pin a Bark panel and a Sage bar to the far edges, and split zones with 1px vertical hairlines. Columns are deliberately unequal and content sits off-center inside the field. Anchor the asymmetry with a giant number or the logo rotated up a vertical edge. If every column is the same width and the composition is centered, it is wrong.
 - **Light-ground dominant.** White / Rice fills ~60% of the surface; Bark and Sage are edge anchors, not the field. Scarlet stays ~10% — a spark.
 - **One idea per zone.** A zone holds the headline, or the statue, or the big number — not all three fighting. Let the hero image breathe with real whitespace around it.
 - **Hard type-scale jumps.** Go Display/H1 straight to Body — no safe mid-scale filler. The jump is the composition.
