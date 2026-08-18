@@ -80,6 +80,7 @@ The machine ships with a house style. Left unguided, it reaches for these on its
 - No emoji or decorative icons as bullet substitutes
 - No filler illustration or stock-y spot graphics
 - No divider between every section
+- No standalone dashes as content, headings, or placeholders. A big dash set as a number, a label, or a section divider is not a design element. If a value is missing, omit it or flag it as placeholder, never fill the space with a dash.
 
 <!-- This block carries over to every kit unchanged. Add to it as you catch new AI tells across projects. It's a shared Bolster asset, not brand-specific. -->
 
