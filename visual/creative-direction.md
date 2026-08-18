@@ -20,6 +20,8 @@ The visual elements, motifs, and graphics the brand uses, and the consistent way
 
 **Scarlet mono eyebrow.** Set the eyebrow (`SECURES YOUR ENTIRE ATTACK SURFACE`) in Chivo Mono, uppercase, tracked, Scarlet, near the top-left or under the headline. *Intent:* a consistent tag that flags the surface as Antigen at a glance.
 
+**Collage / layered imagery.** Build image zones by overlapping, not by dropping one photo into a box. Stack two or more black-and-white duotone images (marble busts, a photographed portrait, stippled art) so they meet at hard seams, lay a Rice or Pattern texture semi-transparent over part of an image, and set the burst mark large across the seam where two images meet. Let ghost marks sit at more than one scale and bleed off the edge. Scarlet is the only color on the imagery, nothing else. *Intent:* the layered dossier, an adversary assembling the picture from fragments. This is the signature of the brand's richest surfaces and the thing that stops a hero from reading as a stock photo in a column. See `examples/good/` for the target.
+
 ## Composition & density
 
 How elements are arranged and how much goes on a given area: layout, proportion, whitespace, type scale, how many elements per zone. Governs whether something feels composed or crammed.
