@@ -82,6 +82,10 @@ The machine ships with a house style. Left unguided, it reaches for these on its
 - No divider between every section
 - No standalone dashes as content, headings, or placeholders. A big dash set as a number, a label, or a section divider is not a design element. If a value is missing, omit it or flag it as placeholder, never fill the space with a dash.
 
+**Copy**
+
+- No em dashes in generated copy. Use a period, comma, colon, or parentheses instead. This applies to every surface the kit produces.
+
 <!-- This block carries over to every kit unchanged. Add to it as you catch new AI tells across projects. It's a shared Bolster asset, not brand-specific. -->
 
 **Antigen re-enables:** flat color with **Rice/Pattern texture** on light grounds; **0px radius** on all buttons/inputs; **UPPERCASE tracked mono** for eyebrows, CTAs, and labels; the **burst mark as an oversized graphic**. These are brand-sanctioned — everything else in the reset stands.
