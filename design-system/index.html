@@ -1,0 +1,418 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antigen — Design System (Web)</title>
+
+<!--
+  Antigen Design System, HTML/CSS reproduction of visual/assets/imagery/antigen design system.pdf.
+  Built from the kit's documented specs (color.md, type.md, logo.md, creative-direction.md).
+  Fonts referenced by relative path into ../visual/assets/fonts. Marks inlined as SVG symbols.
+  Flagged gap: Rice and Pattern are textures with no shipped asset or hex, shown as placeholders.
+-->
+
+<style>
+  /* ---- Fonts ---- */
+  @font-face{font-family:"Clash Display";src:url("../visual/assets/fonts/ClashDisplay_Complete/ClashDisplay-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;}
+  @font-face{font-family:"Clash Grotesk Variable";src:url("../visual/assets/fonts/ClashGrotesk_Complete/ClashGrotesk-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;}
+  @font-face{font-family:"Chivo Mono";src:url("../visual/assets/fonts/ChivoMono[wght].ttf") format("truetype");font-weight:100 900;font-display:swap;}
+
+  /* ---- Tokens ---- */
+  :root{
+    --bark:#291B14; --oxblood:#291B14; --scarlet:#D23737; --sage:#D2D297; --greige:#D4D1D0; --white:#FFFFFF;
+    --font-display:"Clash Display",system-ui,sans-serif;
+    --font-body:"Clash Grotesk Variable",system-ui,sans-serif;
+    --font-mono:"Chivo Mono",ui-monospace,monospace;
+    --hair:#E7E4E3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{font-family:var(--font-body);color:var(--oxblood);background:var(--white);}
+
+  /* ---- Type scale ---- */
+  .display{font-family:var(--font-display);font-weight:400;font-size:64px;line-height:72px;letter-spacing:-1px;}
+  .h1{font-family:var(--font-display);font-weight:400;font-size:56px;line-height:64px;letter-spacing:-.5px;}
+  .h2{font-family:var(--font-display);font-weight:400;font-size:40px;line-height:48px;}
+  .h3{font-family:var(--font-display);font-weight:400;font-size:32px;line-height:40px;}
+  .lead{font-family:var(--font-body);font-size:24px;line-height:32px;}
+  .body-lg{font-family:var(--font-body);font-size:20px;line-height:28px;}
+  .body{font-family:var(--font-body);font-size:16px;line-height:24px;}
+  .body-sm{font-family:var(--font-body);font-size:14px;line-height:22px;}
+  .big-number{font-family:var(--font-mono);font-size:96px;line-height:100px;font-weight:400;}
+  .med-number{font-family:var(--font-mono);font-size:48px;line-height:56px;font-weight:400;}
+  .eyebrow{font-family:var(--font-mono);font-weight:200;font-size:11px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--scarlet);}
+  .cta-type{font-family:var(--font-mono);font-weight:400;font-size:13px;line-height:20px;letter-spacing:.1em;text-transform:uppercase;}
+
+  /* ---- Layout ---- */
+  .board{max-width:1440px;margin:0 auto;padding:56px 80px 96px;}
+  .rule{border:0;border-top:1px solid var(--hair);margin:64px 0 0;}
+  .seclabel{font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a9490;margin:28px 0 36px;}
+  .sublabel{font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9a9490;margin:0 0 20px;}
+  .spec{font-family:var(--font-mono);font-weight:400;font-size:12px;line-height:20px;letter-spacing:.02em;color:#9a9490;}
+  .caption{font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6f6a67;margin-top:12px;}
+  .flag{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--scarlet);border:1px solid var(--scarlet);padding:2px 6px;display:inline-block;}
+
+  /* ---- Masthead ---- */
+  .masthead{display:flex;align-items:center;justify-content:space-between;}
+  .masthead .lock{height:34px;color:var(--oxblood);}
+  .masthead .meta{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9a9490;text-align:right;}
+
+  /* ---- Palette ---- */
+  .palette{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;}
+  .swatch .chip{height:200px;border:1px solid var(--hair);}
+  .swatch .name{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px;color:var(--oxblood);}
+  .swatch .hex{font-family:var(--font-mono);font-size:11px;color:#9a9490;margin-top:3px;}
+  .tex{position:relative;display:flex;align-items:flex-end;justify-content:center;padding:10px;}
+  .tex.rice{background:#F7F4EF;}
+  .tex.pattern{background:#EFEDE7;background-image:radial-gradient(var(--greige) 1px,transparent 1px);background-size:12px 12px;}
+
+  /* ---- Typography rows ---- */
+  .type-row{display:grid;grid-template-columns:180px 1fr 230px;gap:32px;align-items:center;padding:22px 0;border-top:1px solid var(--hair);}
+  .type-row:first-of-type{border-top:0;}
+  .type-row .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--oxblood);}
+  .type-row .k small{display:block;color:#9a9490;letter-spacing:.04em;margin-top:4px;text-transform:none;}
+
+  /* ---- Logo tiles ---- */
+  .tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;}
+  .tile .frame{height:170px;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;padding:24px;}
+  .tile .frame.dark{background:var(--bark);}
+  .tile .frame.scarlet{background:var(--scarlet);}
+  .tile svg{max-width:100%;max-height:100%;}
+  .l-dark{color:var(--oxblood);} .l-white{color:var(--white);}
+  .clearspace .frame{position:relative;}
+  .cs-outer{outline:1px dashed var(--scarlet);padding:36px;}
+  .cs-inner{outline:1px dashed var(--scarlet);padding:12px;}
+  .cs-note{position:absolute;top:8px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--scarlet);}
+
+  /* ---- Graphic elements ---- */
+  .divs .drow{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:center;padding:16px 0;}
+  .divs .drow .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:#9a9490;}
+  .divs hr{border:0;border-top:1px solid;}
+  .blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .block .b{height:120px;} .block .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;margin-top:10px;}
+  .markrow{display:flex;align-items:flex-end;gap:72px;}
+  .markrow .mk{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--oxblood);}
+  .markrow .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;}
+  .markrow .ghost{color:var(--greige);}
+
+  /* ---- Nav demo ---- */
+  .navdemo{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:22px 0;}
+  .navdemo .lock{height:24px;color:var(--oxblood);}
+  .navlinks{display:flex;align-items:center;gap:32px;}
+  .navlinks a{font-family:var(--font-body);font-size:16px;color:var(--oxblood);text-decoration:none;}
+  .navlinks a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+  .navlinks a.active{color:var(--scarlet);}
+  .navlinks a.nav-cta{font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;}
+  .stategrid{display:grid;grid-template-columns:repeat(4,auto);gap:48px;margin-top:28px;justify-content:start;}
+  .stategrid .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;margin-bottom:6px;}
+
+  /* ---- Buttons ---- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 22px;border-radius:0;border:1px solid transparent;
+       font-family:var(--font-mono);font-weight:400;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;}
+  .btn.oxblood{background:var(--oxblood);color:var(--white);}
+  .btn.scarlet{background:var(--scarlet);color:var(--white);}
+  .btn.olive{background:var(--sage);color:var(--oxblood);}
+  .btn.is-hover{filter:brightness(.88);}
+  .btn.outline{background:transparent;border-color:var(--oxblood);color:var(--oxblood);}
+  .btn.outline.is-hover{background:var(--oxblood);color:var(--white);filter:none;}
+  .btn.ghost{background:transparent;border-color:var(--greige);color:#9a9490;}
+  .textcta{font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--oxblood);background:none;border:0;cursor:pointer;padding:0;}
+  .textcta.hover{text-decoration:underline;text-underline-offset:3px;}
+  .textcta.disabled{color:#c3bfbc;}
+  .btnrow{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  .btntag{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;margin-left:8px;}
+  .col{display:flex;flex-direction:column;gap:8px;}
+  .k-inline{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;}
+
+  /* ---- Forms ---- */
+  .formgrid{display:grid;grid-template-columns:120px 420px;gap:20px 40px;align-items:start;}
+  .formgrid .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9490;padding-top:26px;}
+  .field label{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6f6a67;margin-bottom:8px;}
+  .field input{width:100%;height:48px;border-radius:0;border:1px solid var(--greige);padding:0 14px;font-family:var(--font-body);font-size:16px;color:var(--oxblood);background:var(--white);}
+  .field input::placeholder{color:#b7b2af;}
+  .field.focus input{border-color:var(--oxblood);outline:none;}
+  .field.error input{border-color:var(--scarlet);}
+  .field.disabled input{background:#F4F2F1;color:#b7b2af;border-color:var(--hair);}
+  .field .err{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--scarlet);margin-top:8px;}
+  .controls{display:flex;gap:28px;align-items:center;}
+  .box,.dot{width:22px;height:22px;border:1px solid var(--greige);display:inline-flex;align-items:center;justify-content:center;background:var(--white);}
+  .dot{border-radius:50%;}
+  .box.checked{background:var(--oxblood);border-color:var(--oxblood);color:var(--white);}
+  .box.error,.dot.error{border-color:var(--scarlet);}
+  .box.disabled,.dot.disabled{background:var(--greige);border-color:var(--greige);}
+  .dot.checked::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--oxblood);}
+  .box.checked svg{width:13px;height:13px;}
+  .ctrlcol{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .ctrlcol .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#9a9490;}
+
+  /* ---- Tags ---- */
+  .tag{display:inline-flex;align-items:center;height:26px;padding:0 12px;border-radius:0;border:1px solid transparent;
+       font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
+  .tag.f-crit{background:var(--scarlet);color:var(--white);}
+  .tag.f-high{background:var(--oxblood);color:var(--white);}
+  .tag.f-med{background:var(--sage);color:var(--oxblood);}
+  .tag.f-low{background:var(--greige);color:var(--oxblood);}
+  .tag.o-crit{border-color:var(--scarlet);color:var(--scarlet);}
+  .tag.o-high{border-color:var(--oxblood);color:var(--oxblood);}
+  .tag.o-med{border-color:#b9b97f;color:#7d7d43;}
+  .tag.o-low{border-color:var(--greige);color:#8a8785;}
+  .tagrow{display:flex;gap:16px;align-items:center;margin-bottom:16px;}
+
+  /* ---- Spacing ---- */
+  .spacescale{display:flex;align-items:flex-end;gap:36px;}
+  .step{display:flex;flex-direction:column;gap:10px;}
+  .step .bar{background:var(--oxblood);height:16px;}
+  .step .k{font-family:var(--font-mono);font-size:11px;color:#9a9490;}
+
+  /* ---- Footer ---- */
+  .foot{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a9490;text-align:center;margin-top:72px;}
+</style>
+
+<!-- Inlined marks (fills → currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-lockup" viewBox="0 0 548 144">
+    <path d="M150.719 104.029H142.428L174.636 32.8105H185.159L217.473 104.029H208.97L199.403 83.089H160.286L150.719 104.029ZM175.592 49.2866L163.368 76.286H196.32L183.99 49.2866L180.057 40.0387H179.419L175.592 49.2866Z" fill="currentColor"/>
+    <path d="M231.911 104.029H224.364V51.5188H231.167V67.9948H231.698C233.505 59.0659 240.946 50.4558 254.02 50.4558C268.796 50.4558 276.13 60.9792 276.13 73.416V104.029H268.583V74.4789C268.583 63.6366 263.375 57.3651 251.363 57.3651C238.607 57.3651 231.911 65.1248 231.911 78.6245V104.029Z" fill="currentColor"/>
+    <path d="M320.62 104.029H309.246C298.829 104.029 292.132 99.6713 292.132 87.3409V58.0029H282.778V51.5188H292.132V38.9758H299.785V51.5188H320.62V58.0029H299.785V87.766C299.785 95.1005 303.399 97.1202 311.053 97.1202H320.62V104.029Z" fill="currentColor"/>
+    <path d="M336.443 44.8221H328.896V32.8105H336.443V44.8221ZM336.443 104.029H328.896V51.5188H336.443V104.029Z" fill="currentColor"/>
+    <path d="M371.673 99.7776C356.047 99.7776 346.48 89.4668 346.48 75.1167C346.48 60.7666 356.366 50.4558 372.523 50.4558C383.578 50.4558 392.294 55.6644 394.42 65.0185H394.952V51.5188H401.755V99.0335C401.755 116.36 390.806 123.163 374.968 123.163C360.724 123.163 349.882 116.041 349.882 103.817H357.429C357.429 113.065 363.594 116.679 375.287 116.679C388.893 116.679 394.208 112.533 394.208 99.4587V85.7464H393.676C391.55 93.825 383.791 99.7776 371.673 99.7776ZM354.028 75.1167C354.028 88.5101 362.319 93.0809 373.692 93.0809C386.661 93.0809 394.208 86.5968 394.208 75.4356V73.6286C394.208 63.3178 386.342 57.1525 374.224 57.1525C362.425 57.1525 354.028 61.7233 354.028 75.1167Z" fill="currentColor"/>
+    <path d="M439.515 105.092C422.614 105.092 411.878 94.4628 411.878 77.7741C411.878 61.8296 422.508 50.4558 439.409 50.4558C454.822 50.4558 465.77 59.3848 465.77 75.0104C465.77 76.9238 465.558 78.5182 465.239 79.9001H419C419.425 91.699 425.484 98.8209 439.409 98.8209C451.739 98.8209 457.479 94.2502 457.479 86.5968V85.8527H465.026V86.5968C465.026 97.5454 454.184 105.092 439.515 105.092ZM439.303 56.7274C425.697 56.7274 419.531 63.7429 419 75.223H458.649C458.649 74.6915 458.649 74.16 458.649 73.6286C458.649 62.5737 451.633 56.7274 439.303 56.7274Z" fill="currentColor"/>
+    <path d="M483.328 104.029H475.781V51.5188H482.584V67.9948H483.115C484.922 59.0659 492.363 50.4558 505.437 50.4558C520.213 50.4558 527.547 60.9792 527.547 73.416V104.029H520V74.4789C520 63.6366 514.792 57.3651 502.78 57.3651C490.024 57.3651 483.328 65.1248 483.328 78.6245V104.029Z" fill="currentColor"/>
+    <path d="M82.1458 99.0094V119.058H73.5897V101.321L70.3501 95.7623L67.0397 101.339V119.058H58.4836V98.9914L70.4178 78.8851L82.1458 99.0094Z" fill="currentColor"/>
+    <path d="M54.7244 99.9959L43.4965 115.341L36.5549 110.261L47.7813 94.9159L54.7244 99.9959Z" fill="currentColor"/>
+    <path d="M103.925 110.273L96.9491 115.307L85.8251 99.8875L92.7998 94.8541L103.925 110.273Z" fill="currentColor"/>
+    <path d="M62.9958 73.7629L47.4816 91.1401L28.4085 97.3377L25.7638 89.2003L42.638 83.7166L46.9244 78.9167L40.5958 77.4919L23.7426 82.9666L21.0994 74.8277L40.1846 68.6286L62.9958 73.7629Z" fill="currentColor"/>
+    <path d="M119.405 74.662L116.762 82.7994L99.8905 77.3187L93.5996 78.6833L97.8829 83.5555L114.736 89.0301L112.091 97.169L93.0047 90.9684L77.5718 73.4029L100.336 68.4674L119.405 74.662Z" fill="currentColor"/>
+    <path d="M40.7494 57.2019L38.064 65.3755L20 59.4384L22.6854 51.2664L40.7494 57.2019Z" fill="currentColor"/>
+    <path d="M120.412 59.4204L102.309 65.2369L99.6781 57.0468L117.781 51.2303L120.412 59.4204Z" fill="currentColor"/>
+    <path d="M63.4025 41.8503L65.5667 65.136L44.248 55.7455L32.4599 39.5264L39.3804 34.4946L49.8115 48.8461L55.7003 51.4396L55.0994 44.98L44.6833 30.645L51.6053 25.6147L63.4025 41.8503Z" fill="currentColor"/>
+    <path d="M95.6207 30.5411L85.1926 44.8957L84.5465 51.298L90.5061 48.7317L100.922 34.3937L107.844 39.4225L96.047 55.6612L74.5731 64.9101L76.9121 41.7374L88.6972 25.5123L95.6207 30.5411Z" fill="currentColor"/>
+    <path d="M74.4421 39.0144H65.8393V20H74.4421V39.0144Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="m-icon" viewBox="0 0 121 120">
+    <path d="M72.1458 89.0094V109.058H63.5897V91.3213L60.3501 85.7623L57.0397 91.3393V109.058H48.4836V88.9914L60.4178 68.8851L72.1458 89.0094Z" fill="currentColor"/>
+    <path d="M44.7244 89.9959L33.4965 105.341L26.5549 100.261L37.7813 84.9159L44.7244 89.9959Z" fill="currentColor"/>
+    <path d="M93.9253 100.273L86.9491 105.307L75.8251 89.8875L82.7998 84.8541L93.9253 100.273Z" fill="currentColor"/>
+    <path d="M52.9958 63.7629L37.4816 81.1401L18.4085 87.3377L15.7638 79.2003L32.638 73.7166L36.9244 68.9167L30.5958 67.4919L13.7426 72.9666L11.0994 64.8277L30.1846 58.6286L52.9958 63.7629Z" fill="currentColor"/>
+    <path d="M109.405 64.662L106.762 72.7994L89.8905 67.3187L83.5996 68.6833L87.8829 73.5555L104.736 79.0301L102.091 87.169L83.0047 80.9684L67.5718 63.4029L90.3363 58.4674L109.405 64.662Z" fill="currentColor"/>
+    <path d="M30.7494 47.2019L28.064 55.3755L10 49.4384L12.6854 41.2664L30.7494 47.2019Z" fill="currentColor"/>
+    <path d="M110.412 49.4204L92.3093 55.2369L89.6781 47.0468L107.781 41.2303L110.412 49.4204Z" fill="currentColor"/>
+    <path d="M53.4025 31.8503L55.5667 55.136L34.248 45.7455L22.4599 29.5264L29.3804 24.4946L39.8115 38.8461L45.7003 41.4396L45.0994 34.98L34.6833 20.645L41.6053 15.6147L53.4025 31.8503Z" fill="currentColor"/>
+    <path d="M85.6207 20.5411L75.1926 34.8957L74.5465 41.298L80.5061 38.7317L90.9222 24.3937L97.8441 29.4225L86.047 45.6612L64.5731 54.9101L66.9121 31.7374L78.6972 15.5123L85.6207 20.5411Z" fill="currentColor"/>
+    <path d="M64.4421 29.0144H55.8393V10H64.4421V29.0144Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="m-icon-thin" viewBox="0 0 121 120">
+    <path d="M70.9817 90.329V109.059H65.2163V91.888L60.3609 83.5563L55.4094 91.9003V109.059H49.644V90.3173L60.4064 72.1844L70.9817 90.329Z" fill="currentColor"/>
+    <path d="M42.1054 91.2637L32.3361 104.617L27.6451 101.185L37.4144 87.8318L42.1054 91.2637Z" fill="currentColor"/>
+    <path d="M92.8316 101.185L88.1178 104.586L78.4378 91.1682L83.151 87.7677L92.8316 101.185Z" fill="currentColor"/>
+    <path d="M49.8983 64.8157L35.9096 80.4834L18.0944 86.2722L16.3125 80.79L32.647 75.4821L39.0694 68.2876L29.603 66.1567L29.2041 66.2854L13.2845 71.4572L11.5033 65.9738L29.3266 60.1844L49.8983 64.8157Z" fill="currentColor"/>
+    <path d="M108.993 65.7965L107.212 71.2793L90.8823 65.9744L81.4547 68.0173L87.8605 75.3072L104.179 80.6084L102.398 86.0918L84.5751 80.3018L70.6554 64.4604L91.1809 60.0108L108.993 65.7965Z" fill="currentColor"/>
+    <path d="M27.9086 47.7941L26.0935 53.315L10.376 48.1506L12.1898 42.629L27.9086 47.7941Z" fill="currentColor"/>
+    <path d="M110.037 48.1198L94.2847 53.1802L92.5071 47.6463L108.259 42.5859L110.037 48.1198Z" fill="currentColor"/>
+    <path d="M51.7097 31.5538L53.6615 52.554L34.4406 44.0876L23.4276 28.9364L28.0915 25.547L38.1883 39.439L47.0144 43.3266L46.1155 33.6625L36.0291 19.7816L40.6924 16.3928L51.7097 31.5538Z" fill="currentColor"/>
+    <path d="M84.2691 19.6702L74.1753 33.5665L73.2081 43.1609L82.1209 39.3208L92.2067 25.4368L96.8706 28.8256L85.8545 43.9903L66.4883 52.3312L68.5965 31.4368L79.6052 16.2814L84.2691 19.6702Z" fill="currentColor"/>
+    <path d="M63.0484 10V26.5451H57.2356V10H63.0484Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="m-wordmark" viewBox="0 0 426 131">
+    <path d="M28.2912 91.2189H20L52.208 20H62.7314L95.0456 91.2189H86.5419L76.9751 70.2784H37.8579L28.2912 91.2189ZM53.1646 36.476L40.9405 63.4754H73.8925L61.5621 36.476L57.6291 27.2282H56.9913L53.1646 36.476Z" fill="currentColor"/>
+    <path d="M109.483 91.2189H101.936V38.7083H108.739V55.1843H109.27C111.077 46.2553 118.518 37.6453 131.593 37.6453C146.368 37.6453 153.702 48.1687 153.702 60.6054V91.2189H146.155V61.6684C146.155 50.8261 140.947 44.5546 128.935 44.5546C116.18 44.5546 109.483 52.3143 109.483 65.814V91.2189Z" fill="currentColor"/>
+    <path d="M198.192 91.2189H186.818C176.401 91.2189 169.704 86.8608 169.704 74.5303V45.1924H160.35V38.7083H169.704V26.1652H177.358V38.7083H198.192V45.1924H177.358V74.9555C177.358 82.29 180.972 84.3096 188.625 84.3096H198.192V91.2189Z" fill="currentColor"/>
+    <path d="M214.015 32.0115H206.468V20H214.015V32.0115ZM214.015 91.2189H206.468V38.7083H214.015V91.2189Z" fill="currentColor"/>
+    <path d="M249.245 86.967C233.619 86.967 224.053 76.6562 224.053 62.3062C224.053 47.9561 233.938 37.6453 250.095 37.6453C261.15 37.6453 269.867 42.8538 271.993 52.208H272.524V38.7083H279.327V86.223C279.327 103.549 268.379 110.352 252.54 110.352C238.296 110.352 227.454 103.23 227.454 91.0063H235.001C235.001 100.254 241.167 103.868 252.859 103.868C266.465 103.868 271.78 99.7227 271.78 86.6482V72.9359H271.249C269.123 81.0144 261.363 86.967 249.245 86.967ZM231.6 62.3062C231.6 75.6996 239.891 80.2703 251.265 80.2703C264.233 80.2703 271.78 73.7862 271.78 62.6251V60.818C271.78 50.5072 263.914 44.342 251.796 44.342C239.997 44.342 231.6 48.9128 231.6 62.3062Z" fill="currentColor"/>
+    <path d="M317.087 92.2819C300.186 92.2819 289.45 81.6522 289.45 64.9636C289.45 49.0191 300.08 37.6453 316.981 37.6453C332.394 37.6453 343.343 46.5742 343.343 62.1999C343.343 64.1132 343.13 65.7077 342.811 67.0895H296.572C296.997 78.8885 303.056 86.0104 316.981 86.0104C329.312 86.0104 335.052 81.4396 335.052 73.7862V73.0422H342.599V73.7862C342.599 84.7348 331.756 92.2819 317.087 92.2819ZM316.875 43.9168C303.269 43.9168 297.104 50.9324 296.572 62.4125H336.221C336.221 61.881 336.221 61.3495 336.221 60.818C336.221 49.7631 329.205 43.9168 316.875 43.9168Z" fill="currentColor"/>
+    <path d="M360.9 91.2189H353.353V38.7083H360.156V55.1843H360.687C362.494 46.2553 369.935 37.6453 383.01 37.6453C397.785 37.6453 405.119 48.1687 405.119 60.6054V91.2189H397.572V61.6684C397.572 50.8261 392.364 44.5546 380.352 44.5546C367.597 44.5546 360.9 52.3143 360.9 65.814V91.2189Z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="board">
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <svg class="lock" viewBox="0 0 548 144" role="img" aria-label="Antigen"><use href="#m-lockup"/></svg>
+    <div class="meta">Design System<br>Web Specification · v1.0</div>
+  </div>
+
+  <!-- Colour palette -->
+  <hr class="rule">
+  <div class="seclabel">Colour palette</div>
+  <div class="palette">
+    <div class="swatch"><div class="chip tex rice"><span class="flag">no file</span></div><div class="name">Rice</div><div class="hex">texture / warm off-white</div></div>
+    <div class="swatch"><div class="chip tex pattern"><span class="flag">no file</span></div><div class="name">Pattern</div><div class="hex">texture / greige leaf</div></div>
+    <div class="swatch"><div class="chip" style="background:#D4D1D0"></div><div class="name">Greige</div><div class="hex">#D4D1D0</div></div>
+    <div class="swatch"><div class="chip" style="background:#291B14"></div><div class="name">Bark / Oxblood</div><div class="hex">#291B14</div></div>
+    <div class="swatch"><div class="chip" style="background:#D23737"></div><div class="name">Scarlet</div><div class="hex">#D23737</div></div>
+    <div class="swatch"><div class="chip" style="background:#D2D297"></div><div class="name">Sage</div><div class="hex">#D2D297</div></div>
+  </div>
+
+  <!-- Typography -->
+  <hr class="rule">
+  <div class="seclabel">Typography</div>
+  <div class="typo">
+    <div class="type-row"><div class="k">Display<small>Clash Display</small></div><div class="display">Accelerating enterprise defense.</div><div class="spec">64 / 72 / −1</div></div>
+    <div class="type-row"><div class="k">H1<small>Clash Display</small></div><div class="h1">Enterprise Defense</div><div class="spec">56 / 64 / −0.5</div></div>
+    <div class="type-row"><div class="k">H2<small>Clash Display</small></div><div class="h2">Enterprise Defense</div><div class="spec">40 / 48 / 0</div></div>
+    <div class="type-row"><div class="k">H3<small>Clash Display</small></div><div class="h3">Enterprise Defense</div><div class="spec">32 / 40 / 0</div></div>
+    <div class="type-row"><div class="k">Lead<small>Clash Grotesk</small></div><div class="lead">The quick brown fox jumps over the lazy dog.</div><div class="spec">24 / 32 / 0</div></div>
+    <div class="type-row"><div class="k">Body Large<small>Clash Grotesk</small></div><div class="body-lg">The quick brown fox jumps over the lazy dog.</div><div class="spec">20 / 28 / 0</div></div>
+    <div class="type-row"><div class="k">Body<small>Clash Grotesk</small></div><div class="body">The quick brown fox jumps over the lazy dog.</div><div class="spec">16 / 24 / 0</div></div>
+    <div class="type-row"><div class="k">Body Small<small>Clash Grotesk</small></div><div class="body-sm">The quick brown fox jumps over the lazy dog.</div><div class="spec">14 / 22 / 0</div></div>
+    <div class="type-row"><div class="k">Big Number<small>Chivo Mono</small></div><div class="big-number">02.16</div><div class="spec">96 / 100 / 0</div></div>
+    <div class="type-row"><div class="k">Medium Number<small>Chivo Mono</small></div><div class="med-number">02.16</div><div class="spec">48 / 56 / 0</div></div>
+    <div class="type-row"><div class="k">Eyebrow<small>Chivo Mono ExtraLight</small></div><div class="eyebrow">Secures your entire attack surface</div><div class="spec">11 / 16 / 0.14em · UPPER</div></div>
+    <div class="type-row"><div class="k">CTA<small>Chivo Mono Regular</small></div><div class="cta-type">Get a demo</div><div class="spec">13 / 20 / 0.1em · UPPER</div></div>
+  </div>
+
+  <!-- Logo & mark -->
+  <hr class="rule">
+  <div class="seclabel">Logo &amp; mark</div>
+  <div class="tiles">
+    <div class="tile"><div class="sublabel">Primary lockup</div><div class="frame"><svg class="l-dark" viewBox="0 0 548 144" style="height:40px"><use href="#m-lockup"/></svg></div></div>
+    <div class="tile"><div class="sublabel">Wordmark only</div><div class="frame"><svg class="l-dark" viewBox="0 0 426 131" style="height:34px"><use href="#m-wordmark"/></svg></div></div>
+    <div class="tile"><div class="sublabel">Mark / default</div><div class="frame"><svg class="l-dark" viewBox="0 0 121 120" style="height:64px"><use href="#m-icon"/></svg></div></div>
+    <div class="tile"><div class="sublabel">Mark / thin</div><div class="frame"><svg class="l-dark" viewBox="0 0 121 120" style="height:64px"><use href="#m-icon-thin"/></svg></div></div>
+    <div class="tile"><div class="sublabel">Reversed</div><div class="frame dark"><svg class="l-white" viewBox="0 0 548 144" style="height:40px"><use href="#m-lockup"/></svg></div></div>
+    <div class="tile"><div class="sublabel">On Scarlet</div><div class="frame scarlet"><svg class="l-white" viewBox="0 0 121 120" style="height:64px"><use href="#m-icon"/></svg></div></div>
+  </div>
+  <div class="clearspace" style="margin-top:40px">
+    <div class="sublabel">Clearspace rule</div>
+    <div class="tile" style="max-width:220px"><div class="frame"><div class="cs-outer"><span class="cs-note">1× icon height</span><div class="cs-inner"><svg class="l-dark" viewBox="0 0 121 120" style="height:56px;display:block"><use href="#m-icon"/></svg></div></div></div></div>
+  </div>
+
+  <!-- Graphic elements -->
+  <hr class="rule">
+  <div class="seclabel">Graphic elements</div>
+  <div class="divs">
+    <div class="sublabel">Row A — Dividers</div>
+    <div class="drow"><div class="k">1px / Warm Greige</div><hr style="border-top-color:var(--greige)"></div>
+    <div class="drow"><div class="k">1px / Oxblood</div><hr style="border-top-color:var(--oxblood)"></div>
+    <div class="drow"><div class="k">1px / Scarlet</div><hr style="border-top-color:var(--scarlet)"></div>
+  </div>
+  <div style="margin-top:40px">
+    <div class="sublabel">Row B — Colour blocks</div>
+    <div class="blocks">
+      <div class="block"><div class="b" style="background:var(--bark)"></div><div class="k">Bark panel</div></div>
+      <div class="block"><div class="b" style="background:var(--scarlet)"></div><div class="k">Red block</div></div>
+      <div class="block"><div class="b" style="background:var(--sage)"></div><div class="k">Sage block</div></div>
+      <div class="block"><div class="b" style="background:var(--greige)"></div><div class="k">Greige block</div></div>
+    </div>
+  </div>
+  <div style="margin-top:40px">
+    <div class="sublabel">Row C — Mark as graphic</div>
+    <div class="markrow">
+      <div class="mk"><svg viewBox="0 0 121 120" style="height:22px"><use href="#m-icon"/></svg><div class="k">Inline marker</div></div>
+      <div class="mk"><svg viewBox="0 0 121 120" style="height:52px"><use href="#m-icon"/></svg><div class="k">Section marker</div></div>
+      <div class="mk"><svg class="ghost" viewBox="0 0 121 120" style="height:120px"><use href="#m-icon-thin"/></svg><div class="k">Watermark / ghost</div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <hr class="rule">
+  <div class="seclabel">Navigation</div>
+  <div class="navdemo">
+    <svg class="lock" viewBox="0 0 548 144" role="img" aria-label="Antigen"><use href="#m-lockup"/></svg>
+    <nav class="navlinks">
+      <a href="#">Solutions</a>
+      <a href="#" class="active">Industries</a>
+      <a href="#">Research</a>
+      <a href="#">Company</a>
+      <a href="#" class="nav-cta">Get a demo</a>
+    </nav>
+  </div>
+  <div class="stategrid">
+    <div><div class="k">Default</div><div class="spec">Clash Grotesk 16px · Oxblood</div></div>
+    <div><div class="k">Hover</div><div class="spec">1px underline · Oxblood</div></div>
+    <div><div class="k">Active</div><div class="spec">Scarlet #D23737</div></div>
+    <div><div class="k">CTA</div><div class="spec">Chivo Mono · uppercase · tracked</div></div>
+  </div>
+
+  <!-- Buttons -->
+  <hr class="rule">
+  <div class="seclabel">Buttons &amp; CTAs</div>
+
+  <div class="sublabel">Text CTA</div>
+  <div class="btnrow" style="gap:56px">
+    <div class="col"><button class="textcta">Get a demo</button><span class="k-inline">Default</span></div>
+    <div class="col"><button class="textcta hover">Get a demo</button><span class="k-inline">Hover</span></div>
+    <div class="col"><button class="textcta disabled">Get a demo</button><span class="k-inline">Disabled</span></div>
+  </div>
+
+  <div class="sublabel" style="margin-top:36px">Filled / 44px height / 0px radius</div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div class="btnrow"><a class="btn oxblood">Button label</a><a class="btn oxblood is-hover">Button label</a><span class="btntag">Oxblood · hover</span></div>
+    <div class="btnrow"><a class="btn scarlet">Button label</a><a class="btn scarlet is-hover">Button label</a><span class="btntag">Scarlet · hover</span></div>
+    <div class="btnrow"><a class="btn olive">Button label</a><a class="btn olive is-hover">Button label</a><span class="btntag">Pale Olive · hover</span></div>
+  </div>
+
+  <div class="sublabel" style="margin-top:36px">Outline / 44px height / 0px radius</div>
+  <div class="btnrow">
+    <a class="btn outline">Button label</a>
+    <a class="btn outline is-hover">Button label</a>
+    <a class="btn ghost">Button label</a>
+    <span class="btntag">Default · hover · ghost</span>
+  </div>
+
+  <!-- Forms -->
+  <hr class="rule">
+  <div class="seclabel">Form elements</div>
+  <div class="formgrid">
+    <div class="k">Default</div>
+    <div class="field"><label>Email address</label><input placeholder="Enter email address"></div>
+    <div class="k">Focus</div>
+    <div class="field focus"><label>Email address</label><input value="alex@"></div>
+    <div class="k">Filled</div>
+    <div class="field"><label>Email address</label><input value="alex@antigen.sh"></div>
+    <div class="k">Error</div>
+    <div class="field error"><label>Email address</label><input value="alex@antigen"><div class="err">This field is required</div></div>
+    <div class="k">Disabled</div>
+    <div class="field disabled"><label>Email address</label><input value="alex@antigen.sh" disabled></div>
+  </div>
+
+  <div class="sublabel" style="margin-top:44px">Checkbox states</div>
+  <div class="controls">
+    <div class="ctrlcol"><span class="box"></span><span class="k">Unchecked</span></div>
+    <div class="ctrlcol"><span class="box checked"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9.2L10 3.2" stroke="#fff" stroke-width="1.6"/></svg></span><span class="k">Checked</span></div>
+    <div class="ctrlcol"><span class="box error"></span><span class="k">Error</span></div>
+    <div class="ctrlcol"><span class="box disabled"></span><span class="k">Disabled</span></div>
+  </div>
+
+  <div class="sublabel" style="margin-top:32px">Radio states</div>
+  <div class="controls">
+    <div class="ctrlcol"><span class="dot"></span><span class="k">Unselected</span></div>
+    <div class="ctrlcol"><span class="dot checked"></span><span class="k">Selected</span></div>
+    <div class="ctrlcol"><span class="dot error"></span><span class="k">Error</span></div>
+    <div class="ctrlcol"><span class="dot disabled"></span><span class="k">Disabled</span></div>
+  </div>
+
+  <!-- Tags -->
+  <hr class="rule">
+  <div class="seclabel">Tags &amp; badges</div>
+  <div class="sublabel">Filled</div>
+  <div class="tagrow">
+    <span class="tag f-crit">Critical</span>
+    <span class="tag f-high">High</span>
+    <span class="tag f-med">Medium</span>
+    <span class="tag f-low">Low</span>
+  </div>
+  <div class="sublabel" style="margin-top:24px">Outline</div>
+  <div class="tagrow">
+    <span class="tag o-crit">Critical</span>
+    <span class="tag o-high">High</span>
+    <span class="tag o-med">Medium</span>
+    <span class="tag o-low">Low</span>
+  </div>
+
+  <!-- Spacing -->
+  <hr class="rule">
+  <div class="seclabel">Spacing scale</div>
+  <div class="spacescale">
+    <div class="step"><div class="bar" style="width:4px"></div><div class="k">4</div></div>
+    <div class="step"><div class="bar" style="width:8px"></div><div class="k">8</div></div>
+    <div class="step"><div class="bar" style="width:16px"></div><div class="k">16</div></div>
+    <div class="step"><div class="bar" style="width:24px"></div><div class="k">24</div></div>
+    <div class="step"><div class="bar" style="width:32px"></div><div class="k">32</div></div>
+    <div class="step"><div class="bar" style="width:48px"></div><div class="k">48</div></div>
+    <div class="step"><div class="bar" style="width:64px"></div><div class="k">64</div></div>
+    <div class="step"><div class="bar" style="width:96px"></div><div class="k">96</div></div>
+  </div>
+
+  <div class="foot">Antigen Design System · Web · v1.0 · 2025</div>
+
+</div>

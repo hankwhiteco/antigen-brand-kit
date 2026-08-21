@@ -8,13 +8,13 @@ The visual elements, motifs, and graphics the brand uses, and the consistent way
 
 <!-- Each move: name it, describe the maneuver as an instruction that produces a recognizable result, and give the intent: why it exists, what it's meant to signal. Intent is what lets the machine extrapolate to a surface no one anticipated. Fill from the sprint. -->
 
-**Classical statuary.** Use a black-and-white Greek/Roman marble bust as the hero image, cropped large and calm against a light ground. *Intent:* the timeless adversary — antiquity meets AI; gravitas and permanence under a technical, modern system. This is the brand's signature image; reach for it first on hero surfaces.
+**Classical statuary.** Use a black-and-white Greek/Roman marble bust as the hero image, cropped large and calm against a light ground. *Intent:* the timeless adversary, antiquity meets AI; gravitas and permanence under a technical, modern system. This is the brand's signature image; reach for it first on hero surfaces.
 
-**The number motif.** Place an oversized `02.16` / `0216` in Chivo Mono, Scarlet (or reversed on Bark), as an edition/marker anchor — often rotated up a vertical edge panel. *Intent:* ordinal precision, a technical signature; it reads as a serial stamp, not literal data.
+**The number motif.** Place an oversized `02.16` / `0216` in Chivo Mono, Scarlet (or reversed on Bark), as an edition/marker anchor, often rotated up a vertical edge panel. *Intent:* ordinal precision, a technical signature; it reads as a serial stamp, not literal data.
 
-**Mark as graphic.** Deploy the burst icon at three scales — inline marker (small, in text), section marker (medium, opening a zone), or watermark/ghost (huge, cropped at the edge, low-opacity Greige or a bold Scarlet crop). *Intent:* brand presence as texture and structure without competing with the headline.
+**Mark as graphic.** Deploy the burst icon at three scales, inline marker (small, in text), section marker (medium, opening a zone), or watermark/ghost (huge, cropped at the edge, low-opacity Greige or a bold Scarlet crop). *Intent:* brand presence as texture and structure without competing with the headline.
 
-**Rice & pattern texture.** Lay the rice-paper crackle or organic leaf pattern over light grounds and Bark panels. *Intent:* warmth and tactility that offsets a cold security subject — keeps the system human.
+**Rice & pattern texture.** Lay the rice-paper crackle or organic leaf pattern over light grounds and Bark panels. *Intent:* warmth and tactility that offsets a cold security subject, keeps the system human.
 
 **Edge panels + 1px zoning.** Anchor a layout with a full-height Bark panel on one edge and/or a Sage bar on the other, and split zones with 1px hairline dividers (Greige, Oxblood, or Scarlet). *Intent:* editorial rigor and an asymmetric grid; the structure of an audit report.
 
@@ -29,11 +29,11 @@ How elements are arranged and how much goes on a given area: layout, proportion,
 <!-- The section that stops output from going generic. Everything can be right, correct color, type, moves, and the thing still looks templated because the spacing is default and every zone is equally full. Rules go here as testing surfaces them: copy limits per zone, one idea per zone, hard type-scale jumps, what breathes vs. what fills. -->
 
 - **Full-height asymmetric zones.** The layout is full-bleed vertical zones of uneven width, not a centered container with even columns. Run a Rice or White field as the main ground, pin a Bark panel and a Sage bar to the far edges, and split zones with 1px vertical hairlines. Columns are deliberately unequal and content sits off-center inside the field. Anchor the asymmetry with a giant number or the logo rotated up a vertical edge. If every column is the same width and the composition is centered, it is wrong.
-- **Light-ground dominant.** White / Rice fills ~60% of the surface; Bark and Sage are edge anchors, not the field. Scarlet stays ~10% — a spark.
-- **One idea per zone.** A zone holds the headline, or the statue, or the big number — not all three fighting. Let the hero image breathe with real whitespace around it.
-- **Hard type-scale jumps.** Go Display/H1 straight to Body — no safe mid-scale filler. The jump is the composition.
+- **Light-ground dominant.** White / Rice fills ~60% of the surface; Bark and Sage are edge anchors, not the field. Scarlet stays ~10%, a spark.
+- **One idea per zone.** A zone holds the headline, or the statue, or the big number, not all three fighting. Let the hero image breathe with real whitespace around it.
+- **Hard type-scale jumps.** Go Display/H1 straight to Body, no safe mid-scale filler. The jump is the composition.
 - **Asymmetric, left-aligned.** Columns are uneven and divided by 1px verticals; body copy is left-aligned, never centered.
-- **0px radius, flat.** No rounded corners, no shadows, no elevation — edges are hard, color is flat (texture is the only surface treatment).
+- **0px radius, flat.** No rounded corners, no shadows, no elevation, edges are hard, color is flat (texture is the only surface treatment).
 
 ## Restraint: when to do less
 
@@ -41,7 +41,7 @@ When to hold back. Which moves to drop when a piece is doing too much, and when 
 
 <!-- Fill as testing surfaces the over-reaches. -->
 
-- **One hero move per surface.** Statue *or* the giant number *or* the oversized ghost mark — not all at once.
+- **One hero move per surface.** Statue *or* the giant number *or* the oversized ghost mark, not all at once.
 - **Drop the texture** when a zone is type-dense; Rice/Pattern is for open grounds, not behind body copy.
 - A plain, correct default is strong: Bark headline on a White ground, one Scarlet mono eyebrow, generous margins. If in doubt, ship that.
 
@@ -88,7 +88,7 @@ The machine ships with a house style. Left unguided, it reaches for these on its
 
 <!-- This block carries over to every kit unchanged. Add to it as you catch new AI tells across projects. It's a shared Bolster asset, not brand-specific. -->
 
-**Antigen re-enables:** flat color with **Rice/Pattern texture** on light grounds; **0px radius** on all buttons/inputs; **UPPERCASE tracked mono** for eyebrows, CTAs, and labels; the **burst mark as an oversized graphic**. These are brand-sanctioned — everything else in the reset stands.
+**Antigen re-enables:** flat color with **Rice/Pattern texture** on light grounds; **0px radius** on all buttons/inputs; **UPPERCASE tracked mono** for eyebrows, CTAs, and labels; the **burst mark as an oversized graphic**. These are brand-sanctioned, everything else in the reset stands.
 
 ## Failure modes (brand-specific)
 
@@ -190,13 +190,13 @@ Per-surface builds. Each names the lead move and the density for that piece. The
 **Lead move:** classical statuary hero + Scarlet mono eyebrow. **Density:** hero breathes (statue, headline in Clash Display, one-line lead, `Get a demo`); nav is Clash Grotesk top-right (Solutions · Industries · Research · Company), with `Get a demo` as a mono text CTA, not a filled button (see Components > Navigation). Down-scroll: alternate White/Rice grounds with a Bark section; big-number motif marks one section; footer on Bark with reversed logo. One hero move per section.
 
 ## 4-page deck
-**Lead move:** the number motif as running marker (`02.16`…). **Density:** cover = statue + Display headline + logo, sparse; three content pages hold one idea each — a Bark divider page, a stat page using Big Numbers in Scarlet, a body page in Clash Grotesk. Consistent 1px zoning cover-to-content.
+**Lead move:** the number motif as running marker (`02.16`…). **Density:** cover = statue + Display headline + logo, sparse; three content pages hold one idea each, a Bark divider page, a stat page using Big Numbers in Scarlet, a body page in Clash Grotesk. Consistent 1px zoning cover-to-content.
 
 ## LinkedIn banner
-**Lead move:** mark-as-graphic (cropped burst) + wordmark. **Density:** near-empty. Bark or White ground, the eyebrow or the number motif small, logo in the safe area. Carry the brand in a sliver — no paragraph.
+**Lead move:** mark-as-graphic (cropped burst) + wordmark. **Density:** near-empty. Bark or White ground, the eyebrow or the number motif small, logo in the safe area. Carry the brand in a sliver, no paragraph.
 
 ## Social post
-**Lead move:** one hero statement or the statue. **Density:** near-zero copy — a single Clash Display line or the bust, the mark, and Scarlet as the only accent. Thumb-stop recognition, not information.
+**Lead move:** one hero statement or the statue. **Density:** near-zero copy, a single Clash Display line or the bust, the mark, and Scarlet as the only accent. Thumb-stop recognition, not information.
 
 ## Bus-stop / OOH poster
-**Lead move:** statue or oversized ghost mark, one idea. **Density:** minimal — one headline read at distance, the eyebrow, logo, and a Scarlet spark. Bark or White field, huge type, nothing that needs a second read.
+**Lead move:** statue or oversized ghost mark, one idea. **Density:** minimal, one headline read at distance, the eyebrow, logo, and a Scarlet spark. Bark or White field, huge type, nothing that needs a second read.

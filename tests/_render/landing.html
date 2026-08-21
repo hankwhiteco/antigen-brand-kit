@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antigen — test: landing</title>
+<style>
+@font-face{font-family:"Clash Display";src:url("../../visual/assets/fonts/ClashDisplay_Complete/ClashDisplay-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;}
+@font-face{font-family:"Clash Grotesk";src:url("../../visual/assets/fonts/ClashGrotesk_Complete/ClashGrotesk-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;}
+@font-face{font-family:"Chivo Mono";src:url("../../visual/assets/fonts/ChivoMono%5Bwght%5D.ttf") format("truetype");font-weight:200 800;font-display:swap;}
+:root{
+  --bark:#291B14;--scarlet:#D23737;--sage:#D2D297;--greige:#D4D1D0;--white:#FFFFFF;
+  --display:"Clash Display",system-ui,sans-serif;
+  --body:"Clash Grotesk",system-ui,sans-serif;
+  --mono:"Chivo Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--body);color:var(--bark);background:var(--white);-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px;}
+.eyebrow{font-family:var(--mono);font-weight:250;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--scarlet);}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;}
+h1,h2,h3{font-family:var(--display);font-weight:560;letter-spacing:-.02em;line-height:1.02;}
+.hairline{border:0;border-top:1px solid var(--greige);}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid var(--greige);}
+nav .brand{display:flex;align-items:center;gap:12px;}
+nav .brand img{height:26px;}
+nav .links{display:flex;align-items:center;gap:34px;}
+nav .links a{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--bark);text-decoration:none;}
+nav .links a:hover{color:var(--scarlet);}
+nav .links a.btn{color:var(--white);}
+nav .links a.btn:hover{color:var(--white);}
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.1em;
+  background:var(--bark);color:var(--white);padding:13px 20px;border:1px solid var(--bark);border-radius:0;height:44px;line-height:18px;text-decoration:none;}
+.btn:hover{background:var(--scarlet);border-color:var(--scarlet);}
+.btn.outline{background:transparent;color:var(--bark);}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;border-bottom:1px solid var(--greige);}
+.hero .left{padding:72px 48px 72px 48px;border-right:1px solid var(--greige);display:flex;flex-direction:column;justify-content:center;}
+.hero .eyebrow{margin-bottom:22px;}
+.hero .right .num{position:absolute;right:26px;top:22px;font-family:var(--mono);color:var(--white);font-size:13px;letter-spacing:.1em;z-index:2;}
+.hero h1{font-size:64px;line-height:1.0;letter-spacing:-.02em;max-width:12ch;}
+.hero p.lead{font-size:20px;line-height:1.5;margin-top:26px;max-width:44ch;color:var(--bark);}
+.hero .cta{margin-top:38px;display:flex;gap:16px;align-items:center;}
+.hero .right{position:relative;overflow:hidden;background:var(--white);}
+.hero .right .statue{position:absolute;inset:0;background:url("img/statue-p1.png") no-repeat;background-size:150%;background-position:62% 34%;filter:grayscale(1);}
+.hero .right .eyebrow{position:absolute;left:34px;bottom:34px;}
+.hero .right .ghost{position:absolute;right:-60px;top:-40px;width:340px;opacity:.9;}
+
+/* FEATURES — asymmetric numbered list, NOT a 3-col icon grid */
+.features{padding:96px 0;}
+.features .kicker{margin-bottom:48px;}
+.feat{display:grid;grid-template-columns:120px 1fr;gap:32px;padding:40px 0;border-top:1px solid var(--greige);align-items:start;}
+.feat .n{font-family:var(--mono);font-size:48px;color:var(--scarlet);line-height:1;}
+.feat h3{font-size:32px;margin-bottom:12px;}
+.feat p{font-size:16px;line-height:1.5;max-width:60ch;}
+
+/* SOCIAL PROOF on bark */
+.proof{background:var(--bark);color:var(--white);padding:88px 0;position:relative;overflow:hidden;}
+.proof .eyebrow{color:var(--scarlet);}
+.proof blockquote{font-family:var(--display);font-weight:520;font-size:40px;line-height:1.1;letter-spacing:-.02em;max-width:20ch;margin:20px 0 40px;}
+.proof .who{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--greige);}
+.proof .ghost{position:absolute;right:-80px;bottom:-120px;width:420px;opacity:.06;}
+
+/* PRICING — bordered columns, 0 radius, not shadow-cards */
+.pricing{padding:96px 0;}
+.pricing .kicker{margin-bottom:40px;}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--greige);}
+.plan{padding:40px;border-right:1px solid var(--greige);}
+.plan:last-child{border-right:0;background:var(--sage);}
+.plan h3{font-size:28px;margin-bottom:8px;}
+.plan .desc{font-size:16px;line-height:1.5;margin-bottom:28px;max-width:36ch;}
+.plan ul{list-style:none;margin-bottom:28px;}
+.plan li{font-size:15px;padding:8px 0;border-top:1px solid rgba(41,27,20,.14);}
+
+/* FOOTER */
+footer{background:var(--bark);color:var(--white);padding:64px 0 40px;}
+footer .row{display:flex;justify-content:space-between;align-items:flex-start;}
+footer img{height:24px;}
+footer .fnum{font-family:var(--mono);font-size:64px;color:var(--scarlet);line-height:1;}
+footer .links a{display:block;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--greige);text-decoration:none;padding:4px 0;}
+footer .base{display:flex;justify-content:space-between;margin-top:56px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--greige);text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand"><img src="img/logo-dark.svg" alt="Antigen"></div>
+  <div class="links">
+    <a href="#">Solutions</a><a href="#">Industries</a><a href="#">Research</a><a href="#">Company</a>
+    <a class="btn" href="#">Get a demo</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="left">
+    <div class="eyebrow">Secures your entire attack surface</div>
+    <h1>Accelerating enterprise defense at agentspeed.</h1>
+    <p class="lead">Antigen deploys AI pen testing agents against your production systems every night and pairs them with a monthly human red team assessment.</p>
+    <div class="cta"><a class="btn" href="#">Get a demo</a><a class="mono" style="font-size:13px;color:var(--bark);text-decoration:none" href="#">Read the research →</a></div>
+  </div>
+  <div class="right">
+    <div class="statue"></div>
+    <img class="ghost" src="img/icon-white.svg" alt="">
+    <div class="num">02.16</div>
+  </div>
+</section>
+
+<section class="features wrap">
+  <div class="eyebrow kicker">What the adversary does</div>
+  <div class="feat"><div class="n">01</div><div><h3>Maps</h3><p>Antigen enumerates your full attack surface — every service, endpoint, and identity reachable in production.</p></div></div>
+  <div class="feat"><div class="n">02</div><div><h3>Exploits</h3><p>Autonomous agents chain findings into real attack paths every night, the way an adversary would — no waiting on a quarterly engagement.</p></div></div>
+  <div class="feat"><div class="n">03</div><div><h3>Secures</h3><p>Every finding ships with traces, reproduction steps, and remediation — delivered directly in GitHub, Linear, or the Antigen Platform.</p></div></div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="eyebrow">Trusted in production</div>
+    <blockquote>They find what our quarterly pentest missed — nightly.</blockquote>
+    <div class="who">Head of Security · Series-C fintech</div>
+  </div>
+  <img class="ghost" src="img/icon-white.svg" alt="">
+</section>
+
+<section class="pricing wrap">
+  <div class="eyebrow kicker">Engagements</div>
+  <div class="plans">
+    <div class="plan">
+      <h3>Continuous</h3>
+      <div class="desc">Nightly AI pen-testing agents against production, findings in your tools.</div>
+      <ul><li>Autonomous nightly runs</li><li>Traces + reproduction steps</li><li>GitHub / Linear delivery</li></ul>
+      <a class="btn outline" href="#">Get a demo</a>
+    </div>
+    <div class="plan">
+      <h3>Continuous + Red Team</h3>
+      <div class="desc">Everything in Continuous, plus a monthly human red-team assessment.</div>
+      <ul><li>Monthly human red team</li><li>Prioritised remediation</li><li>Antigen Platform access</li></ul>
+      <a class="btn" href="#">Get a demo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div><img src="img/logo-white.svg" alt="Antigen"><div class="fnum" style="margin-top:24px">0216</div></div>
+      <div class="links"><a href="#">Solutions</a><a href="#">Industries</a><a href="#">Research</a><a href="#">Company</a></div>
+    </div>
+    <div class="base"><span>Secures your entire attack surface</span><span>antigen.sh</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
