@@ -99,7 +99,7 @@ What wrong looks like for this brand in particular. The mistakes this brand's ow
 
 <!-- A rule enters when the same mistake shows up twice. Once is a bad prompt. Twice is a missing rule. Name the failure concretely enough to catch on sight. -->
 
-**Filled box in the nav.** The Get a demo CTA in the header is text: Chivo Mono, uppercase, tracked, no fill and no border. If it renders as a solid Oxblood or Scarlet box, that is wrong. Filled buttons are for in-page actions, not the header. Nav links are Clash Grotesk 16px, not mono.
+**Filled box in the nav.** The Get a demo CTA in the header is text: Chivo Mono, uppercase, tracked, no fill and no border. If it renders as a solid Oxblood or Scarlet box, that is wrong. Filled buttons are for in-page actions, not the header. The nav is mono, uppercase, tracked (see Components > Navigation), and a link only goes Scarlet when it is the current page.
 
 ---
 
@@ -109,16 +109,16 @@ Component specs transcribed from the design system (`visual/assets/imagery/antig
 
 ## Navigation
 
-Header layout: logo left, nav links and the Get a demo CTA on the right.
+Header layout: logo left (set it at a confident size, not a tiny mark), nav links and the Get a demo CTA on the right.
 
 | Element | Spec |
 |---|---|
-| Nav links | Clash Grotesk Variable, 16px, Oxblood. |
-| Link hover | 1px underline, Oxblood. |
-| Link active | Scarlet. |
+| Nav links | Chivo Mono, uppercase, tracked, Oxblood. |
+| Link hover | Scarlet. |
+| Link active | Scarlet, and only on the current page. Do not colour a link Scarlet when nothing is selected. |
 | CTA | `Get a demo`. Chivo Mono, uppercase, tracked. Plain text, no fill and no border. |
 
-Nav links are Grotesk, not mono. Only the CTA is mono, and it stays text, never a filled button.
+The whole nav is mono. Note: this overrides the design system PDF, which set nav links in Clash Grotesk; the owner moved the nav to mono. Reconcile the PDF when it is next revised.
 
 ## Buttons
 
@@ -175,7 +175,7 @@ Every interactive element ships its states. They are not optional polish, and a 
 
 | Element | States |
 |---|---|
-| Nav links | Hover is a 1px underline. The active link is Scarlet. |
+| Nav links | Mono uppercase. Hover goes Scarlet. A link is Scarlet only when it is the current page. |
 | Filled buttons | Darken on hover. |
 | Outline button | Fills Oxblood with a white label on hover. |
 | Text CTA | Underlines on hover. Disabled is greyed. |

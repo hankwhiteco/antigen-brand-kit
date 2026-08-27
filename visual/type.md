@@ -30,11 +30,11 @@ Font files live in [`assets/fonts/`](assets/fonts/): `ClashDisplay_Complete/`, `
 | Body Small | Clash Grotesk Variable | 14 / 22 / 0 |
 | Big Number | Chivo Mono | 96 / 100 / 0 |
 | Medium Number | Chivo Mono | 48 / 56 / 0 |
-| Eyebrow | Chivo Mono ExtraLight | 11 / 16 / 0.14em · UPPERCASE |
+| Eyebrow | Chivo Mono Regular/Medium | 11 / 16 / 0.14em · UPPERCASE |
 | CTA | Chivo Mono Regular | 13 / 20 / 0.1em · UPPERCASE |
 
 **Type treatment**
 - Headlines: Clash Display **Regular (400)**, **sentence case** (not all-caps), tight tracking, hard scale jumps between Display/H1 and body, don't drift to safe mid-scale sizes.
-- Eyebrows & CTAs: Chivo Mono, UPPERCASE, tracked (0.1–0.14em), small; Scarlet for eyebrows.
+- Eyebrows & CTAs: Chivo Mono, UPPERCASE, tracked (0.1–0.14em), small; Scarlet for eyebrows. Set eyebrows at Regular or Medium weight, not ExtraLight, which reads too thin at 11px on screen (overrides the design system PDF's ExtraLight).
 - Numbers: Chivo Mono, oversized as a device (`02.16` / `0216`).
 - Body: Clash Grotesk Variable, generous line-height (~1.5), left-aligned, never centered.
