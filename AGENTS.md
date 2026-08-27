@@ -1,9 +1,9 @@
-# Antigen — Agent Brief
+# Antigen: Agent Brief
 
 You are building on-brand materials for **Antigen**, *the AI adversary that secures your entire attack surface*.
 
 This file is a **router**, not a spec. It tells you which file owns each decision. Read the
-relevant file in full before building — don't work from memory, and don't treat this page as
+relevant file in full before building, don't work from memory, and don't treat this page as
 a substitute for the specs it points at.
 
 ## Where things live
@@ -25,6 +25,6 @@ a substitute for the specs it points at.
 ## Working rules
 
 - Ask what surface, audience, and length before building if it isn't stated.
-- Don't add filler — no dummy stats, decorative icons, or sections that don't earn a place.
+- Don't add filler, no dummy stats, decorative icons, or sections that don't earn a place.
 - Use placeholder copy only where real content is missing, and flag it as placeholder.
 - When a spec here would conflict with the file it points at, the file wins.

@@ -1,6 +1,6 @@
 # Antigen Brand Kit
 
-Everything needed to build on-brand Antigen materials — landing pages, decks, one-pagers,
+Everything needed to build on-brand Antigen materials, landing pages, decks, one-pagers,
 social, email. Hand this whole folder to a designer, or drop it into an AI coding tool
 (Cursor, Claude Code, Windsurf, v0, etc.) and start building.
 
@@ -8,7 +8,7 @@ social, email. Hand this whole folder to a designer, or drop it into an AI codin
 
 **Using an AI tool (Cursor / Claude Code / etc.):**
 1. Open this folder as your project / workspace.
-2. The tool auto-reads [`AGENTS.md`](AGENTS.md) — a router that points at the specs below.
+2. The tool auto-reads [`AGENTS.md`](AGENTS.md), a router that points at the specs below.
 3. Prompt it: *"Build me a [landing page / pitch deck / one-pager / email] for Antigen."*
 
 **Working by hand:** open the file that owns the decision you're making (see the map below).
@@ -48,7 +48,7 @@ antigen-brand-kit/
   Clash Display + Clash Grotesk + Chivo Mono; black-and-white classical statuary, rice-paper texture,
   the burst mark, and the `02.16` number motif. See [`visual/`](visual/).
 
-Full detail — and the *why* behind each rule — lives in the files above.
+Full detail, and the *why* behind each rule, lives in the files above.
 
 ---
-Contact: Antigen — antigen.sh
+Contact: Antigen, antigen.sh
