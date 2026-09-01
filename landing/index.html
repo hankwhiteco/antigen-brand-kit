@@ -117,8 +117,8 @@
   /* social proof (light texture ground) */
   section.proof-sec{background-image:url("../visual/assets/imagery/elements/antigen-texture-greige-shader.webp");background-size:600px;color:var(--oxblood);}
   section.proof-sec .eyebrow{color:var(--scarlet);}
-  .proof-logos{display:flex;gap:48px;flex-wrap:wrap;margin-top:40px;align-items:center;}
-  .proof-logos .slot{width:150px;height:44px;border:1px dashed var(--oxblood);opacity:.35;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--oxblood);}
+  .proof-logos{display:flex;gap:56px;flex-wrap:wrap;margin-top:40px;align-items:center;}
+  .proof-logos .brand{height:24px;width:auto;color:var(--oxblood);opacity:.55;}
 
   /* pricing with number motif on edge */
   section.pricing{position:relative;overflow:hidden;}
@@ -254,11 +254,12 @@
 <section class="proof-sec">
   <div class="wrap">
     <h2 class="h2">Built for teams defending real attack surface.</h2>
+    <!-- Placeholder customer logos (monochrome representations for mockup only, not official trademarked artwork) -->
     <div class="proof-logos">
-      <div class="slot">Logo</div>
-      <div class="slot">Logo</div>
-      <div class="slot">Logo</div>
-      <div class="slot">Logo</div>
+      <svg class="brand" viewBox="0 0 128 30" role="img" aria-label="Google"><text x="0" y="23" font-family="'Product Sans',Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-.6" fill="currentColor">Google</text></svg>
+      <svg class="brand" viewBox="0 0 104 30" role="img" aria-label="NASA"><text x="0" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="800" letter-spacing="1.5" fill="currentColor">NASA</text></svg>
+      <svg class="brand" viewBox="0 0 118 30" role="img" aria-label="Sequoia"><text x="0" y="23" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="500" fill="currentColor">Sequoia</text></svg>
+      <svg class="brand" viewBox="0 0 176 30" role="img" aria-label="Y Combinator"><rect x="0" y="1" width="28" height="28" rx="3" fill="currentColor"/><text x="14" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#ffffff">Y</text><text x="38" y="22" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="currentColor">Combinator</text></svg>
     </div>
   </div>
 </section>
