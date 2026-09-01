@@ -35,6 +35,7 @@
   :root{
     --bark:#291B14; --oxblood:#291B14; --scarlet:#D23737;
     --sage:#D2D297; --greige:#D4D1D0; --white:#FFFFFF;
+    --hair:#E4E1DF; /* light-grey system frame line */
     --font-display:"Clash Display",system-ui,sans-serif;
     --font-body:"Clash Grotesk Variable",system-ui,sans-serif;
     --font-mono:"Chivo Mono",ui-monospace,monospace;
@@ -55,11 +56,11 @@
   .body-sm{font-size:14px;line-height:22px;}
   .big-number{font-family:var(--font-mono);font-size:96px;line-height:100px;font-weight:400;}
   .med-number{font-family:var(--font-mono);font-size:48px;line-height:56px;font-weight:400;}
-  .eyebrow{font-family:var(--font-mono);font-weight:200;font-size:11px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--scarlet);}
+  .eyebrow{font-family:var(--font-mono);font-weight:500;font-size:11px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--scarlet);}
   .label{font-family:var(--font-mono);font-weight:400;font-size:13px;line-height:20px;letter-spacing:.1em;text-transform:uppercase;}
 
   /* ---- Structure ---- */
-  .wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 56px;border-left:1px solid var(--hair);border-right:1px solid var(--hair);}
   .cta{
     display:inline-flex;align-items:center;height:44px;font-family:var(--font-mono);font-weight:400;font-size:13px;line-height:20px;
     letter-spacing:.1em;text-transform:uppercase;border-radius:0;border:none;cursor:pointer;
@@ -73,39 +74,30 @@
   /* placeholder flag */
   .ph{font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--scarlet);border:1px solid var(--scarlet);padding:3px 7px;display:inline-block;}
 
-  /* ---- Nav ---- */
-  header.nav{display:flex;align-items:center;justify-content:space-between;padding-top:28px;padding-bottom:28px;}
-  header.nav svg.logo{height:26px;width:auto;display:block;color:var(--oxblood);}
-  nav.links{display:flex;align-items:center;gap:28px;}
-  nav.links a{font-family:var(--font-body);font-size:16px;text-decoration:none;color:var(--oxblood);}
-  nav.links a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
-  nav.links a.active{color:var(--scarlet);}
-  nav.links a.nav-cta{font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--oxblood);}
+  /* ---- Nav (mono, bigger logo, no active-red) ---- */
+  header.nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0;}
+  header.nav svg.logo{height:34px;width:auto;display:block;color:var(--oxblood);}
+  nav.links{display:flex;align-items:center;gap:34px;}
+  nav.links a{font-family:var(--font-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--oxblood);}
+  nav.links a:hover{color:var(--scarlet);}
+  nav.links a.nav-cta{color:var(--oxblood);}
 
-  /* ---- Hero (full-bleed collage) ---- */
-  section.hero{padding:0;}
-  .hero-stage{position:relative;display:grid;grid-template-columns:104px minmax(0,1.15fr) minmax(0,1fr) 40px;min-height:80vh;border-top:1px solid var(--greige);}
-  /* left: Bark edge panel */
-  .edge-bark{position:relative;background:var(--bark);overflow:hidden;}
-  .edge-bark .n0216{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%) rotate(-90deg);font-family:var(--font-mono);font-size:96px;line-height:1;color:var(--scarlet);}
-  .edge-bark .vword{position:absolute;left:50%;bottom:26px;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--font-display);font-weight:400;font-size:22px;color:var(--white);}
-  /* center: Rice field with copy */
-  .stage-copy{position:relative;background:#F7F4EF url("../visual/assets/imagery/elements/antigen-texture-paper-fiber.webp");background-size:600px;padding:64px 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
-  .stage-copy .eyebrow{margin-bottom:26px;position:relative;z-index:2;}
-  .stage-copy h1{position:relative;z-index:2;max-width:14ch;}
-  .stage-copy .lead{margin:26px 0 34px;max-width:40ch;position:relative;z-index:2;color:var(--oxblood);}
-  .stage-copy .ghost{position:absolute;right:-70px;bottom:-90px;width:340px;height:auto;color:var(--greige);opacity:.55;z-index:1;}
+  /* ---- Hero (clean: copy + one contained statue block, inside the frame) ---- */
+  section.hero{padding:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+  .hero-wrap{max-width:1200px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);}
+  .hero-stage{position:relative;display:grid;grid-template-columns:1.15fr 0.85fr;min-height:74vh;}
+  .stage-copy{position:relative;padding:64px 56px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
+  .stage-copy .eyebrow{margin-bottom:22px;position:relative;z-index:2;}
+  .stage-copy h1{font-size:48px;line-height:52px;letter-spacing:-.5px;max-width:15ch;position:relative;z-index:2;}
+  .stage-copy .lead{margin:22px 0 30px;max-width:44ch;position:relative;z-index:2;color:var(--oxblood);}
+  .stage-copy .spin{position:absolute;left:24px;bottom:24px;width:150px;height:auto;mix-blend-mode:multiply;opacity:.6;z-index:1;pointer-events:none;}
   .textcta{font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--oxblood);text-decoration:none;position:relative;z-index:2;width:max-content;}
-  .textcta:hover{text-decoration:underline;text-underline-offset:4px;}
-  /* right: collage image on Bark */
-  .stage-img{position:relative;background:var(--bark);overflow:hidden;}
-  .stage-img .statue{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 16%;filter:grayscale(1);}
-  .stage-img .pattern{position:absolute;top:0;right:0;width:56%;height:44%;object-fit:cover;opacity:.4;z-index:2;}
-  .stage-img .num{position:absolute;left:22px;top:24px;font-family:var(--font-mono);font-size:38px;color:var(--scarlet);z-index:3;}
-  .stage-img .eyebrow-img{position:absolute;left:24px;bottom:30px;z-index:3;font-family:var(--font-mono);font-weight:200;font-size:11px;line-height:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--scarlet);}
-  .stage-img .seam-mark{position:absolute;top:52%;left:0;transform:translate(-50%,-50%);width:118px;height:auto;color:var(--scarlet);z-index:4;}
-  /* right edge: Sage bar */
-  .edge-sage{background:var(--sage);}
+  .textcta:hover{color:var(--scarlet);text-decoration:underline;text-underline-offset:4px;}
+  /* contained statue block (collage lives here, not across the whole hero) */
+  .hero-art{position:relative;background:var(--greige);border-left:1px solid var(--hair);overflow:hidden;}
+  .hero-art .statue{position:absolute;right:-4%;bottom:0;height:106%;width:auto;object-fit:cover;object-position:center top;filter:grayscale(1);}
+  .hero-art .blur{position:absolute;top:0;right:0;width:56%;height:26%;object-fit:cover;opacity:.6;filter:blur(4px);z-index:2;}
+  .hero-art .num{position:absolute;left:22px;top:20px;font-family:var(--font-mono);font-size:32px;color:var(--scarlet);z-index:3;}
 
   /* ---- Generic section ---- */
   section{padding:96px 0;}
@@ -114,11 +106,13 @@
   section.features-sec{background-image:url("../visual/assets/imagery/elements/antigen-texture-paper-fiber.webp");background-size:512px;background-repeat:repeat;}
 
   /* features: asymmetric, 1px verticals, no icon grid */
-  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;}
-  .feature{padding:0 32px;border-left:1px solid var(--oxblood);}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--hair);}
+  .feature{padding:32px 32px 0;border-left:1px solid var(--hair);}
   .feature:first-child{padding-left:0;border-left:0;}
-  .feature h3{margin-bottom:14px;}
-  .feature p{max-width:32ch;}
+  .feature .fimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:22px;background:var(--greige);}
+  .feature .fimg.duo{filter:grayscale(1);}
+  .feature h3{font-size:20px;line-height:26px;margin-bottom:10px;}
+  .feature p{max-width:34ch;}
 
   /* social proof (light texture ground) */
   section.proof-sec{background-image:url("../visual/assets/imagery/elements/antigen-texture-greige-shader.webp");background-size:600px;color:var(--oxblood);}
@@ -133,12 +127,12 @@
     color:var(--scarlet);writing-mode:vertical-rl;letter-spacing:.05em;opacity:.12;z-index:0;
   }
   section.pricing .wrap{position:relative;z-index:1;}
-  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;}
-  .tier{padding:0 32px;border-left:1px solid var(--oxblood);}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--hair);}
+  .tier{padding:32px 32px 0;border-left:1px solid var(--hair);}
   .tier:first-child{padding-left:0;border-left:0;}
-  .tier .med-number{margin:16px 0;color:var(--oxblood);}
+  .tier h3{font-size:20px;line-height:26px;margin-bottom:10px;}
   .tier ul{list-style:none;margin-top:16px;}
-  .tier li{padding:8px 0;border-top:1px solid var(--greige);}
+  .tier li{padding:8px 0;border-top:1px solid var(--hair);}
 
   /* footer */
   footer{background:var(--bark);color:var(--white);padding:72px 0 40px;}
@@ -201,7 +195,7 @@
     <svg class="logo" viewBox="0 0 548 144" role="img" aria-label="Antigen"><use href="#antigen-logo"/></svg>
     <nav class="links">
       <a href="#">Solutions</a>
-      <a href="#" class="active">Industries</a>
+      <a href="#">Industries</a>
       <a href="#">Research</a>
       <a href="#">Company</a>
       <a class="nav-cta" href="#">Get a demo</a>
@@ -209,32 +203,23 @@
   </header>
 </div>
 
-<!-- HERO — full-bleed collage per creative-direction.md (Collage move + full-height asymmetric zones) -->
+<!-- HERO — clean copy column + one contained statue block (collage lives in the image block) -->
 <section class="hero">
+  <div class="hero-wrap">
   <div class="hero-stage">
-    <!-- left: Bark edge panel, rotated number + wordmark -->
-    <div class="edge-bark">
-      <span class="n0216">0216</span>
-      <span class="vword">Antigen</span>
-    </div>
-    <!-- center: Rice field, copy + faint ghost mark -->
     <div class="stage-copy">
       <div class="eyebrow">Secures your entire attack surface</div>
       <h1 class="display">AI adversary that maps, exploits, and secures your entire attack surface.</h1>
       <p class="lead">Antigen deploys AI pen-testing agents against your production systems every night and pairs them with a monthly human red team.</p>
       <a class="textcta" href="#">Get a demo</a>
-      <svg class="ghost" viewBox="0 0 121 120" aria-hidden="true"><use href="#antigen-icon-thin"/></svg>
+      <img class="spin" src="../visual/assets/imagery/motion/antigen-symbol-spin-white-bg.gif" alt="" aria-hidden="true">
     </div>
-    <!-- right: statue collage on Bark, Pattern overlay, seam-straddling Scarlet mark -->
-    <div class="stage-img">
+    <div class="hero-art">
       <img class="statue" src="../visual/assets/imagery/elements/antigen-bust-portrait-2.webp" alt="Classical marble bust">
-      <img class="pattern" src="../visual/assets/imagery/elements/antigen-texture-pattern-overlay.webp" alt="" aria-hidden="true">
+      <img class="blur" src="../visual/assets/imagery/elements/antigen-texture-greige-shader.webp" alt="" aria-hidden="true">
       <span class="num">02.16</span>
-      <span class="eyebrow-img">Secures your entire attack surface</span>
-      <svg class="seam-mark" viewBox="0 0 121 120" aria-hidden="true"><use href="#antigen-icon"/></svg>
     </div>
-    <!-- right edge: Sage bar -->
-    <div class="edge-sage"></div>
+  </div>
   </div>
 </section>
 
@@ -247,14 +232,17 @@
     <h2 class="h2">Maps, exploits, and secures.</h2>
     <div class="features">
       <div class="feature">
+        <img class="fimg" src="../visual/assets/imagery/elements/antigen-wireframe-diagram.webp" alt="Isometric attack-surface diagram">
         <h3 class="h3">Nightly AI red team</h3>
         <p class="body">Autonomous pen-testing agents run against production every night, not once a quarter.</p>
       </div>
       <div class="feature">
+        <img class="fimg duo" src="../visual/assets/imagery/elements/antigen-bust-portrait-1.webp" alt="Human red-team portrait">
         <h3 class="h3">Human assessment</h3>
         <p class="body">A monthly human red-team pass backs the agents where judgment matters.</p>
       </div>
       <div class="feature">
+        <img class="fimg duo" src="../visual/assets/imagery/elements/antigen-image-square.webp" alt="Woodcut collage">
         <h3 class="h3">Findings that ship</h3>
         <p class="body">Every finding lands with traces, reproduction steps, and remediation, delivered in GitHub, Linear, or the Antigen Platform.</p>
       </div>
@@ -265,9 +253,6 @@
 <!-- SECTION 2 — SOCIAL PROOF (light greige-shader texture ground) -->
 <section class="proof-sec">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Trusted in production</span>
-    </div>
     <h2 class="h2">Built for teams defending real attack surface.</h2>
     <div class="proof-logos">
       <div class="slot">Logo</div>
@@ -275,7 +260,6 @@
       <div class="slot">Logo</div>
       <div class="slot">Logo</div>
     </div>
-    <p class="body-sm" style="margin-top:28px;"><span class="ph">Placeholder: no customers or quotes in kit</span></p>
   </div>
 </section>
 
@@ -310,7 +294,6 @@
         </ul>
       </div>
     </div>
-    <p class="body-sm" style="margin-top:32px;"><span class="ph">Placeholder: no pricing in kit</span></p>
   </div>
 </section>
 
