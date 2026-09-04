@@ -4,6 +4,8 @@ The system behind the brand. How to make judgment calls the spec files don't cov
 
 ## Moves
 
+<!-- [B] brand-specific: these moves are Antigen's. Replace per brand on strip; keep the name / maneuver / intent format. See TEMPLATE.md. -->
+
 The visual elements, motifs, and graphics the brand uses, and the consistent way it applies them, to create cohesion and recognition. Color, type, and logo define the raw elements; this is how they combine into something recognizable.
 
 <!-- Each move: name it, describe the maneuver as an instruction that produces a recognizable result, and give the intent: why it exists, what it's meant to signal. Intent is what lets the machine extrapolate to a surface no one anticipated. Fill from the sprint. -->
@@ -23,6 +25,8 @@ The visual elements, motifs, and graphics the brand uses, and the consistent way
 **Collage / layered imagery.** Collage belongs inside a contained image block, not sprawled across the whole surface. Give a zone one image block (the hero's statue block, one image per three-up column) and keep the surrounding layout clean and framed. Inside the block, layer black-and-white duotone images (marble busts, a photographed portrait, stippled or woodcut art), lay a Rice or Pattern texture over part of the image and away from the focal point (never over a face or eyes), and let the burst mark or a ghost mark sit within or just off the block. Scarlet is the only color on the imagery, nothing else. *Intent:* the layered dossier, an adversary assembling the picture from fragments, held in a disciplined frame rather than a busy background. See `examples/good/` for the target.
 
 ## Composition & density
+
+<!-- [A] template: craft rules, carry over to every kit. Values they name (Rice, Bark, Scarlet) are Layer B. -->
 
 How elements are arranged and how much goes on a given area: layout, proportion, whitespace, type scale, how many elements per zone. Governs whether something feels composed or crammed.
 
